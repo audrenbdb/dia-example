@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/audrenbdb/dia/pb";
+
+package dia;
+
+service Solutions {
+    rpc GetAllSolutions(GetAllSolutionsRequest) returns (GetAllSolutionsResponse) {}
+}
+
+
+message GetAllSolutionsRequest {}
+
+message GetAllSolutionsResponse {
+    repeated Solution solutions = 1;
+}
+
+message Solution {
+    string title = 1;
+    string description = 2;
+}
